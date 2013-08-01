@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  a_size: 1
+  a_element: MyString
+
+two:
+  a_size: 1
+  a_element: MyString

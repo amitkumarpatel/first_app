@@ -1,0 +1,34 @@
+
+<%= form_tag('/tasks/save_array') do-%>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%unless @a_length.blank?%>
+<%#=raise @a_length.to_i.inspect%>
+    <div class="field">
+    <%#= f.label :a_size %><br />
+    <%= hidden_field_tag :a_size, @a_length.to_i %>
+  </div>
+
+<% @a_length.to_i.times do |i|%>
+
+  <div class="field">
+    <%#= f.label :a_element %><br />
+    <%= text_field_tag "a_element_#{i}" %>
+  </div>
+<%end%>
+<%end%>
+  <div class="actions">
+    <%=submit_tag %>
+  </div>
+<% end %>
+
